@@ -1,80 +1,136 @@
+/* Importación de la fuente desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
 
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-	font-size: 1.7rem;
-	font-family: 'Merriweather Sans', sans-serif;
-	background: #2c3e50;
-	color: #ececec;
-	padding: 4rem;
+/* Estilos globales */
+body {
+    font-size: 1.7rem;
+    font-family: 'Merriweather Sans', sans-serif;
+    background: #2c3e50;
+    color: #ececec;
+    padding: 4rem;
 }
 
-h2{
-	text-align: center;
-	margin-bottom: 5rem;
-	font-size: 4rem;
+h2 {
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 4rem;
 }
 
-.all-products{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
+/* Contenedor flexible para productos */
+.all-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.product{
-	overflow: hidden;
-	background: #ffffff;
-	color: #21201e;
-	text-align: center;
-	width: 240px;
-	height: 400px;
-	padding: 2rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-radius: 1.2rem;
-	margin: 2rem;
+/* Estilos para cada producto */
+.product {
+    overflow: hidden;
+    background: #ffffff;
+    color: #21201e;
+    text-align: center;
+    width: 100%; /* Ancho de 100% para adaptarse a pantallas pequeñas */
+    max-width: 240px; /* Máximo ancho de 240px */
+    height: 400px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem;
+    margin: 2rem;
 }
 
-.product .product-title, .product .product-price{
-	font-size: 18px;
+/* Títulos y precios de productos */
+.product .product-title,
+.product .product-price {
+    font-size: 18px;
 }
 
-.product:hover img{
-	scale:  1.1;
+/* Efectos de hover en imágenes */
+.product:hover img {
+    transform: scale(1.1);
 }
 
 .product:hover {
-	box-shadow: 5px 15px 25px #eeeeee;
+    box-shadow: 5px 15px 25px #eeeeee;
 }
 
+/* Estilo de imagen */
 .product img {
-	height: 200px;
-	margin: 1rem;
-	transition: all 0.3s;
+    height: 200px;
+    margin: 1rem;
+    transition: all 0.3s;
 }
 
-.product a:link, .product a:visited{
-	color: #ececec;
-	display: inline-block;
-	text-decoration: none;
-	background-color: #2c3e50;
-	padding: 1.2rem 3rem;
-	border-radius: 1rem;
-	margin-top: 1rem;
-	font-size: 14px;
-	transition: all 0.2s;
+/* Estilos para enlaces dentro del producto */
+.product a:link,
+.product a:visited {
+    color: #ececec;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2c3e50;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-size: 14px;
+    transition: all 0.2s;
 }
 
-.product a:hover{
-	transform: scale(1.1);
+.product a:hover {
+    transform: scale(1.1);
 }
+
+/* Media Query para dispositivos pequeños (móviles) */
+@media (max-width: 768px) {
+    body {
+        padding: 2rem; /* Reducir relleno en pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 3rem; /* Reducir el tamaño del título */
+        margin-bottom: 3rem;
+    }
+
+    .product {
+        width: 100%; /* Los productos ocuparán todo el ancho disponible */
+        max-width: 100%; /* No hay límite de ancho para productos */
+    }
+
+    .product img {
+        height: auto; /* Dejar que las imágenes se ajusten al tamaño del producto */
+    }
+
+    .product a:link,
+    .product a:visited {
+        font-size: 12px; /* Reducir el tamaño de fuente de los enlaces */
+        padding: 1rem 2rem; /* Reducir el relleno de los enlaces */
+    }
+}
+
+/* Media Query para dispositivos de escritorio (pantallas grandes) */
+@media (min-width: 1024px) {
+    body {
+        padding: 6rem; /* Más relleno en pantallas grandes */
+    }
+
+    .all-products {
+        justify-content: space-between; /* Distribuir los productos en línea */
+    }
+
+    .product {
+        max-width: 240px; /* Tamaño de producto fijo */
+    }
+}
+
+
+
 
 
